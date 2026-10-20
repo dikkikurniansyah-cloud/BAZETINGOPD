@@ -1,0 +1,257 @@
+<?php
+declare(strict_types=1);
+session_start(['cookie_httponly'=>true,'cookie_samesite'=>'Lax']);
+$cfg=require __DIR__.'/config.php';
+$raw=<<<'J'
+[["SEKRETARIAT DAERAH", "1ztXClNpw2ipbHNqhHQCDQVeNR7BqVnjx"], ["SEKRETARIAT DEWAN PERWAKILAN RAKYAT KABUPATEN INDRAGIRI HULU", "1KoZERBOlB9Y0iOLHq2AtnjGrCkM8BiXh"], ["INSPEKTORAT DAERAH KABUPATEN INDRAGIRI HULU", "1BOlkB1UgB6x3_eu222d5gpri0URW-nii"], ["DINAS PENDIDIKAN DAN KEBUDAYAAN", "13JNzC1t2eY4kAApFupoxLlsVrT0UAakn"], ["DINAS KESEHATAN", "1vMhhDeg8OzegQ6GLunV1wFUdlnRoxhB9"], ["DINAS PEKERJAAN UMUM, PENATAAN RUANG, PERUMAHAN DAN KAWASAN PEMUKIMAN", "1FcBY9ZY8jTc1hlqY9IxAl13soX-PtB0_"], ["DINAS PENGENDALIAN PENDUDUK, KELUARGA BERENCANA, PEMBERDAYAAN PEREMPUAN DAN PERLINDUNGAN ANAK", "1vzx6JQwmmt56_oXgILHen6R-uDlr28rP"], ["DINAS LINGKUNGAN HIDUP, KEBERSIHAN DAN PERTAMANAN", "1E7RPz7wt7clyEVj_pq9XvxK7a_ejLyYQ"], ["DINAS KEPENDUDUKAN DAN PENCATATAN SIPIL", "1SU1Um3G_vPO26A60sMK0Po7Jvmk9xOGD"], ["DINAS PERINDUSTRIAN, PERDAGANGAN, KOPERASI, USAHA KECIL DAN MENENGAH", "1yK3AVPccVGuxmGdshZ6OYYLp8AYugNen"], ["DINAS PENANAMAN MODAL DAN PELAYANAN TERPADU SATU PINTU", "13WzpaXEwu46oG3eBzjx7auDuKnPCSke9"], ["DINAS PERKEBUNAN, PETERNAKAN DAN PERIKANAN", "1lalByxcSwVKdJVUDlRcZ1qM6JfPOwQsi"], ["DINAS KETAHANAN PANGAN, TANAMAN PANGAN DAN HOLTIKULTURAL", "1tockyM4Di-hlyveNGZygqwPNoDQEydeo"], ["DINAS SOSIAL", "1h_WgLDe1HkH2G5cd84r8xX4Z-yRNhse7"], ["DINAS TENAGA KERJA", "1tVI7rqnZdmJxs-EYQPh16_ANR3rgwaDU"], ["DINAS PEMBERDAYAAN MASYARAKAT DAN DESA", "1MZ6uBDxctoFmckRZMERI4Ts7FBAlHNHZ"], ["DINAS PERHUBUNGAN", "1cvmUFG_ZTTHVAqh3M8UU2m756EgFyewL"], ["DINAS KOMUNIKASI, INFORMATIKA, DAN STATISTIK", "1ce9Bq-Q2FYZahZkw9HBjf8oGjtFk-IXf"], ["DINAS KEPEMUDAAN, OLAHRAGA DAN PARIWISATA", "1bdR_P2I-1JNKWJeSLXys7VYrCbbiYpWy"], ["DINAS PERPUSTAKAAN DAN KEARSIPAN", "1npteQnQ9IYEOeu86fmMSp7KkXAoh6VYR"], ["SATUAN POLISI PAMONG PRAJA", "1VEpjAR8Fp4yLJa9F1FP58OWdiQQ6wNMh"], ["BADAN PERENCANAAN PEMBANGUNAN, RISET DAN INOVASI DAERAH", "1N2HrZ5-j_HvZKRlg5nZGvfJoDwNKOgdz"], ["BADAN PENDAPATAN DAERAH", "1dgz1AV9EmKIud5fINL3I61osmtqq6BsA"], ["BADAN PENGELOLAAN KEUANGAN DAN ASET DAERAH", "1JqZqlxyrMi3M3Brnbnhjp_C6F-w01XiX"], ["BADAN KESATUAN BANGSA DAN POLITIK", "1v_ITlE6yNKoltLmUYt6FJTyUhvfJeEnl"], ["BADAN PENANGGULANGAN BENCANA DAERAH, PEMADAM KEBAKARAN DAN PENYELAMATAN", "1GF0P3l5nUnN3Qj0N9Kzgn_5lfeozZvKO"], ["BADAN KEPEGAWAIAN, PENDIDIKAN DAN PELATIHAN DAERAH", "1JqZqlxyrMi3M3Brnbnhjp_C6F-w01XiX"], ["KECAMATAN BATANG CENAKU", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN BATANG GANSAL", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN BATANG PERANAP", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN KELAYANG", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN KUALA CENAKU", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN LIRIK", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN LUBUK BATU JAYA", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN PASIR PENYU", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN PERANAP", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN RAKIT KULIM", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN RENGAT", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN RENGAT BARAT", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN SEBERIDA", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["KECAMATAN SUNGAI LALA", "1ldTcDWpPiLe_CEEKywH6-X6AzE4X8NNZ"], ["RUMAH SAKIT UMUM DAERAH INDRASARI RENGAT", "1kv-XcpEM8YDCVS02wdOlqdX1JumXeXo1"]]
+J;
+$OPDS=json_decode($raw,true);
+$names=array_column($OPDS,0);
+$dir=__DIR__.'/data';
+$store=$dir.'/links.json';
+if(!is_dir($dir)){@mkdir($dir,0775,true);}
+if(!isset($_SESSION['csrf'])){$_SESSION['csrf']=bin2hex(random_bytes(16));}
+
+function out($d,int $c=200){
+  http_response_code($c);
+  header('Content-Type: application/json; charset=utf-8');
+  header('Cache-Control: no-store');
+  echo json_encode($d,JSON_UNESCAPED_UNICODE);
+  exit;
+}
+function mutate(string $f,callable $fn):void{
+  $fh=@fopen($f,'c+');
+  if(!$fh){out(['error'=>'Folder data tidak bisa ditulis. Atur izin folder data (chmod 775).'],500);}
+  flock($fh,LOCK_EX);
+  $d=json_decode((string)stream_get_contents($fh),true);
+  if(!is_array($d)){$d=[];}
+  $d=$fn($d);
+  ftruncate($fh,0);rewind($fh);
+  $enc=json_encode($d,JSON_UNESCAPED_UNICODE);
+  if($enc!==false){fwrite($fh,$enc);}
+  fflush($fh);flock($fh,LOCK_UN);fclose($fh);
+}
+
+if(isset($_GET['api'])){
+  $api=(string)$_GET['api'];
+  if($api==='list'){
+    $d=is_file($store)?json_decode((string)file_get_contents($store),true):[];
+    if(!is_array($d)){$d=[];}
+    usort($d,fn($a,$b)=>($b['ts']??0)<=>($a['ts']??0));
+    $seen=[];$items=[];
+    foreach($d as $e){if(!isset($seen[$e['opd']])){$seen[$e['opd']]=1;$items[]=$e;}}
+    out(['items'=>$items]);
+  }
+  if($_SERVER['REQUEST_METHOD']!=='POST'){out(['error'=>'Metode tidak didukung.'],405);}
+  $in=json_decode((string)file_get_contents('php://input'),true);
+  if(!is_array($in)){$in=[];}
+  if(!hash_equals($_SESSION['csrf'],(string)($_SERVER['HTTP_X_CSRF']??''))){out(['error'=>'Sesi habis. Muat ulang halaman lalu coba lagi.'],403);}
+
+  if($api==='save'){
+    $opd=(string)($in['opd']??'');
+    $link=trim((string)($in['link']??''));
+    $note=trim((string)($in['note']??''));
+    if(!in_array($opd,$names,true)){out(['error'=>'OPD tidak dikenal.'],422);}
+    if($link===''||strlen($link)>500||!preg_match('#^https://(drive|docs)\.google\.com/#',$link)){
+      out(['error'=>'Link harus link Google Drive (https://drive.google.com/…).'],422);
+    }
+    if(!preg_match('//u',$note)){$note='';}
+    $note=(string)preg_replace('/[\x00-\x1F\x7F]/u',' ',$note);
+    $note=implode('',array_slice((array)preg_split('//u',$note,-1,PREG_SPLIT_NO_EMPTY),0,300));
+    $entry=['id'=>bin2hex(random_bytes(6)),'opd'=>$opd,'link'=>$link,'note'=>$note,'ts'=>(int)round(microtime(true)*1000)];
+    mutate($store,function(array $d)use($entry,$opd){
+      $d[]=$entry;
+      $mine=array_keys(array_filter($d,fn($e)=>$e['opd']===$opd));
+      while(count($mine)>20){unset($d[array_shift($mine)]);}
+      return array_values($d);
+    });
+    out(['ok'=>true]);
+  }
+  if($api==='delete'){
+    $id=(string)($in['id']??'');
+    $pw=(string)($in['password']??'');
+    if(!hash_equals((string)$cfg['admin_password'],$pw)){sleep(1);out(['error'=>'Password admin salah.'],403);}
+    mutate($store,fn(array $d)=>array_values(array_filter($d,fn($e)=>$e['id']!==$id)));
+    out(['ok'=>true]);
+  }
+  out(['error'=>'Perintah tidak dikenal.'],400);
+}
+header('Content-Type: text/html; charset=utf-8');
+?>
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Data Bezeting Perangkat Daerah</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@600;700&display=swap">
+<style>
+:root{--bg:#eaf0ef;--sf:#fff;--ink:#10252f;--mu:#586e77;--ln:#d6e0df;--rv:#0e4a5a;--rv2:#082f3a;--gold:#d19a2e;--ok:#1f8a5b;--okbg:#ddf3e8;--no:#b2432d;--nobg:#fbe5df;--ac:#0b6a80;--sh:0 1px 2px rgba(8,47,58,.08),0 8px 24px rgba(8,47,58,.07);color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#09171c;--sf:#102329;--ink:#e5f0f2;--mu:#8da6ae;--ln:#1f3d47;--rv:#0a3a47;--rv2:#06232b;--ok:#4fd19a;--okbg:#12382c;--no:#ff9b85;--nobg:#3d201a;--ac:#62c7df;--sh:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.25);color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.top{background:linear-gradient(135deg,var(--rv),var(--rv2));color:#fff;position:relative;overflow:hidden;padding:34px 20px 96px}
+.top::after{content:"";position:absolute;inset:0;background-image:linear-gradient(45deg,rgba(209,154,46,.16) 25%,transparent 25%),linear-gradient(-45deg,rgba(209,154,46,.16) 25%,transparent 25%);background-size:34px 34px;-webkit-mask-image:linear-gradient(100deg,transparent 35%,#000);mask-image:linear-gradient(100deg,transparent 35%,#000);pointer-events:none}
+.w{max-width:1120px;margin:0 auto;position:relative;z-index:1}
+h1{font:700 clamp(24px,4vw,34px)/1.15 Sora,"Plus Jakarta Sans",system-ui,sans-serif;margin:0 0 8px;max-width:20ch}
+.top p{margin:0;max-width:52ch;color:rgba(255,255,255,.82)}
+.hero{margin-top:-68px;position:relative;z-index:2}
+.card{background:var(--sf);border:1px solid var(--ln);border-radius:16px;box-shadow:var(--sh);padding:20px}
+h2{font:700 17px/1.3 Sora,"Plus Jakarta Sans",sans-serif;margin:0 0 4px}
+.sub{color:var(--mu);font-size:13.5px;margin:0 0 14px}
+.big{font:700 clamp(44px,7vw,64px)/1 Sora,sans-serif;letter-spacing:-.02em}
+.big small{font:500 15px "Plus Jakarta Sans",sans-serif;color:var(--mu);letter-spacing:0;margin-left:8px}
+.bar{height:12px;border-radius:99px;background:var(--nobg);overflow:hidden;margin:18px 0 10px}
+.bar>div{height:100%;width:0;background:linear-gradient(90deg,var(--ok),var(--gold));border-radius:99px;transition:width .6s}
+.kp{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:16px}
+.kp div{border:1px solid var(--ln);border-radius:12px;padding:10px 12px}
+.kp b{display:block;font:700 22px Sora,sans-serif}.kp span{font-size:13px;color:var(--mu)}
+.main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:20px;margin-top:20px;align-items:start}
+.tb{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:14px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{padding:7px 14px;border-radius:99px;border:1px solid var(--ln);background:transparent;color:var(--ink);font:600 13.5px "Plus Jakarta Sans",sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--rv);color:#fff;border-color:var(--rv)}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit}
+input[type=search]{width:240px;max-width:100%}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.it{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;padding:14px 0;border-top:1px solid var(--ln)}
+.nm{display:flex;gap:12px;align-items:flex-start}
+.num{flex:none;width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font:700 13px Sora,sans-serif}
+.num.d{background:var(--ok);color:#fff}.num.n{background:var(--nobg);color:var(--no)}
+.nm strong{display:block;font-weight:600;line-height:1.35}
+.pill{display:inline-block;margin-top:4px;padding:2px 10px;border-radius:99px;font-size:12.5px;font-weight:600}
+.pill.d{background:var(--okbg);color:var(--ok)}.pill.n{background:var(--nobg);color:var(--no)}
+.tm{font-size:12.5px;color:var(--mu);margin-left:6px}
+.lk{grid-column:1/-1;padding-left:46px}
+.lb{font-size:12.5px;color:var(--mu);margin:8px 0 4px}
+.ac{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.b{padding:6px 12px;border-radius:9px;border:1px solid var(--ln);background:transparent;color:var(--ac);font:600 13.5px "Plus Jakarta Sans",sans-serif;text-decoration:none;cursor:pointer;display:inline-block}
+.b.p{background:var(--ac);border-color:var(--ac);color:var(--sf)}
+.b.x{color:var(--no)}
+.nt{font-size:13px;color:var(--mu)}
+.aside{position:sticky;top:16px}
+label{display:block;margin:14px 0 5px;font-size:13.5px;font-weight:600}
+.sv{width:100%;margin-top:16px;padding:11px;font-size:15px;border-radius:10px}
+.sv:disabled{opacity:.5;cursor:default}
+#msg{min-height:22px;margin-top:10px;font-size:13.5px;color:var(--mu)}#msg.no{color:var(--no)}#msg.ok{color:var(--ok)}
+.em{padding:28px 0;color:var(--mu);text-align:center}
+footer{text-align:center;color:var(--mu);font-size:13px;margin:32px 0 8px;padding-top:16px;border-top:1px solid var(--ln)}
+@media (max-width:860px){.main{grid-template-columns:1fr}.aside{position:static}.top{padding-bottom:88px}}
+@media (max-width:520px){.lk{padding-left:0}.card{padding:16px}input[type=search]{width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<header class="top"><div class="w">
+  <h1>Data Bezeting Perangkat Daerah</h1>
+  <p>Kabupaten Indragiri Hulu. Pantau link Drive tiap OPD, unduh berkasnya, dan lihat siapa yang belum melampirkan bukti dukung.</p>
+</div></header>
+<div class="w" style="padding:0 20px">
+  <section class="hero">
+    <div class="card">
+      <h2>Bukti dukung masuk</h2>
+      <div class="big"><span id="done">0</span><small>dari <span id="tot">42</span> OPD</small></div>
+      <div class="bar"><div id="bar"></div></div>
+      <div class="kp"><div><b id="pct">0%</b><span>Selesai</span></div><div><b id="ok2">0</b><span>Sudah upload</span></div><div><b id="todo">0</b><span>Belum upload</span></div></div>
+    </div>
+  </section>
+  <div class="main">
+    <section class="card">
+      <div class="tb">
+        <div class="chips">
+          <button class="chip" data-f="all" aria-pressed="true">Semua</button>
+          <button class="chip" data-f="done" aria-pressed="false">Sudah upload</button>
+          <button class="chip" data-f="todo" aria-pressed="false">Belum upload</button>
+        </div>
+        <input type="search" id="q" placeholder="Cari nama OPD" aria-label="Cari nama OPD">
+      </div>
+      <div id="list"></div>
+    </section>
+    <aside class="card aside" id="aside">
+      <h2>Lampirkan bukti dukung</h2>
+      <p class="sub">Tempel link Google Drive milik OPD.</p>
+      <label for="opd">Perangkat daerah</label><select id="opd"></select>
+      <label for="glink">Link Google Drive (Bukti Dukung)</label>
+      <input type="url" id="glink" placeholder="https://drive.google.com/…">
+      <label for="note">Catatan</label>
+      <textarea id="note" rows="3" placeholder="Tuliskan nama/jenis dokumen yang dilampirkan"></textarea>
+      <button class="b p sv" id="btnUp">Simpan link</button>
+      <div id="msg" role="status"></div>
+    </aside>
+  </div>
+  <footer>©Diki-Bagian Organisasi-2026</footer>
+</div>
+<script>
+const DATA=<?= json_encode($OPDS,JSON_UNESCAPED_UNICODE|JSON_HEX_TAG|JSON_HEX_AMP) ?>;
+const CSRF=<?= json_encode($_SESSION['csrf']) ?>;
+const $=id=>document.getElementById(id);
+const OK=/^https:\/\/(drive|docs)\.google\.com\//;
+const fid=u=>{const m=u.match(/\/d\/([\w-]+)/)||u.match(/[?&]id=([\w-]+)/);return m?m[1]:null};
+const dlUrl=id=>"https://drive.google.com/uc?export=download&id="+id;
+const viewUrl=id=>"https://docs.google.com/spreadsheets/d/"+id+"/edit";
+const shared={};DATA.forEach(d=>shared[d[1]]=(shared[d[1]]||0)+1);
+const fmt=t=>new Date(t).toLocaleString("id-ID",{dateStyle:"medium",timeStyle:"short"});
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let rows=[],flt="all";
+const msg=(t,c)=>{$("msg").textContent=t;$("msg").className=c||""};
+$("opd").append(Object.assign(el("option",0,"Pilih OPD…"),{value:""}));
+DATA.forEach(d=>$("opd").append(el("option",0,d[0])));
+async function api(name,body){
+  const r=await fetch("?api="+name,{method:body?"POST":"GET",headers:body?{"Content-Type":"application/json","X-CSRF":CSRF}:{},body:body?JSON.stringify(body):undefined,credentials:"same-origin"});
+  let j={};try{j=await r.json()}catch(e){}
+  if(!r.ok)throw new Error(j.error||("Kesalahan server ("+r.status+")"));
+  return j;
+}
+async function load(){try{rows=(await api("list")).items||[];render()}catch(e){msg("Gagal memuat data: "+e.message,"no")}}
+const latest=n=>rows.filter(r=>r.opd===n&&OK.test(r.link))[0];
+
+function acts(id,url,note,onDel){
+  const a=el("div","ac");
+  const v=el("a","b","Buka Drive");v.href=url||viewUrl(id);v.target="_blank";v.rel="noopener noreferrer";a.append(v);
+  if(id){const g=el("a","b p","Download");g.href=dlUrl(id);g.target="_blank";g.rel="noopener noreferrer";a.append(g)}
+  if(note)a.append(el("span","nt","("+note+")"));
+  if(onDel)a.append(Object.assign(el("button","b x","Hapus link"),{onclick:onDel}));
+  return a;
+}
+function sync(){document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.f===flt))}
+function render(){
+  const q=$("q").value.toLowerCase();
+  const st=DATA.map((d,i)=>({i,n:d[0],id:d[1],l:latest(d[0])}));
+  const done=st.filter(s=>s.l).length,tot=DATA.length;
+  $("done").textContent=done;$("ok2").textContent=done;$("tot").textContent=tot;$("todo").textContent=tot-done;
+  $("pct").textContent=Math.round(done/tot*100)+"%";$("bar").style.width=(done/tot*100)+"%";
+  const L=$("list");L.textContent="";
+  const list=st.filter(s=>s.n.toLowerCase().includes(q)&&(flt==="all"||(flt==="done"?s.l:!s.l)));
+  if(!list.length){L.append(el("div","em","Tidak ada OPD yang cocok. Ubah kata kunci atau filter."));return}
+  for(const s of list){
+    const r=el("div","it");
+    const nm=el("div","nm");nm.append(el("div","num "+(s.l?"d":"n"),s.i+1));
+    const tx=el("div");tx.append(el("strong",0,s.n));
+    tx.append(el("span","pill "+(s.l?"d":"n"),s.l?"Sudah upload":"Belum upload"));
+    if(s.l)tx.append(el("span","tm","Terakhir upload "+fmt(s.l.ts)));
+    nm.append(tx);r.append(nm);
+    const bt=el("button","b","Lampirkan link");
+    bt.onclick=()=>{$("opd").value=s.n;$("aside").scrollIntoView({behavior:calm?"auto":"smooth",block:"start"});$("glink").focus({preventScroll:true})};
+    r.append(bt);
+    const lk=el("div","lk");
+    lk.append(el("div","lb","Data bezeting"));lk.append(acts(s.id));
+    if(shared[s.id]>1)lk.append(el("div","nt","Berkas yang sama dipakai "+shared[s.id]+" OPD"));
+    if(s.l){lk.append(el("div","lb","Bukti dukung terbaru"));lk.append(acts(fid(s.l.link),s.l.link,s.l.note,()=>del(s.l)))}
+    r.append(lk);L.append(r);
+  }
+}
+async function del(r){
+  const pw=prompt("Hapus link bukti dukung milik "+r.opd+"?\nMasukkan password admin untuk melanjutkan:");
+  if(pw===null||pw==="")return;
+  try{await api("delete",{id:r.id,password:pw});msg("Link dihapus.","ok");await load()}catch(e){msg("Gagal hapus: "+e.message,"no")}
+}
+async function save(){
+  const opd=$("opd").value,link=$("glink").value.trim(),note=$("note").value.trim();
+  if(!opd)return msg("Pilih OPD dulu.","no");
+  if(!link)return msg("Isi link Google Drive dulu.","no");
+  if(!OK.test(link))return msg("Link harus link Google Drive (https://drive.google.com/…).","no");
+  $("btnUp").disabled=true;msg("Menyimpan…");
+  try{await api("save",{opd,link,note});$("glink").value="";$("note").value="";msg("Link tersimpan.","ok");await load()}
+  catch(e){msg("Gagal menyimpan: "+e.message,"no")}
+  $("btnUp").disabled=false;
+}
+document.querySelectorAll(".chip").forEach(c=>c.onclick=()=>{flt=c.dataset.f;sync();render()});
+$("btnUp").onclick=save;$("q").oninput=render;render();load();setInterval(load,30000);
+</script></body></html>
